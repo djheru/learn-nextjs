@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -80,7 +80,7 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
-var _jsxFileName = "/Users/philip.damra/Sites/_etc/learn-nextjs/hello-next/components/Header.js";
+var _jsxFileName = "/media/phil/InternalStorage/Sites/_howto/howto-nextjs/learn-nextjs/hello-next/components/Header.js";
 
 
 var linkStyle = {
@@ -131,7 +131,7 @@ var Header = function Header() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header__ = __webpack_require__("./components/Header.js");
-var _jsxFileName = "/Users/philip.damra/Sites/_etc/learn-nextjs/hello-next/components/MyLayout.js";
+var _jsxFileName = "/media/phil/InternalStorage/Sites/_howto/howto-nextjs/learn-nextjs/hello-next/components/MyLayout.js";
 
 
 var layoutStyle = {
@@ -167,29 +167,83 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_MyLayout__ = __webpack_require__("./components/MyLayout.js");
-var _jsxFileName = "/Users/philip.damra/Sites/_etc/learn-nextjs/hello-next/pages/index.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
+var _jsxFileName = "/media/phil/InternalStorage/Sites/_howto/howto-nextjs/learn-nextjs/hello-next/pages/index.js";
 
 
+
+
+var PostLink = function PostLink(_ref) {
+  var id = _ref.id,
+      title = _ref.title;
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+    as: "/p/".concat(id),
+    href: "/post?title=".concat(title),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }, title)));
+};
+
+var posts = [{
+  title: 'Hello Next.js',
+  id: 'hello-nextjs'
+}, {
+  title: 'Learn Next.js is awesome',
+  id: 'learn-nextjs'
+}, {
+  title: 'Deploy apps with Zeit',
+  id: 'deploy-nextjs'
+}];
 
 var Index = function Index() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_MyLayout__["a" /* default */], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 19
     }
-  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 20
     }
-  }, "Hello Next.js"));
+  }, "My Blog"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    }
+  }, posts.map(function (_ref2, i) {
+    var id = _ref2.id,
+        title = _ref2.title;
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PostLink, {
+      id: id,
+      title: title,
+      key: i,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      }
+    });
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.js");
