@@ -1,33 +1,58 @@
 import Layout from '../components/MyLayout';
 import Link from 'next/link';
-import fetch from 'isomorphic-unfetch';
 
-const PostLink = ({id, name}) => (
+const arial = 'Arial';
+
+const PostLink = ({ id, title }) => (
   <li>
-    <Link as={`/p/${id}`} href={`/post?id=${id}`}>
-      <a>{name}</a>
+    <Link as={ `/p/${id}` } href={ `/post?title=${title}` }>
+      <a>{ title }</a>
     </Link>
+    <style jsx>{ `
+    li {
+        list-style: none;
+        margin: 5px 0;
+        font-family: ${arial};
+      }
+
+      a {
+        text-decoration: none;
+        color: blue;
+      }
+
+      a:hover {
+        opacity: 0.6;
+      }
+    ` }</style>
   </li>
 );
 
-const Index = (props) => (
+const posts = [
+  { title: 'Hello Next.js', id: 'hello-nextjs' },
+  { title: 'Learn Next.js is awesome', id: 'learn-nextjs' },
+  { title: 'Deploy apps with Zeit', id: 'deploy-nextjs' }
+];
+
+const Index = () => (
   <Layout>
-    <h1>Batman, Bitch!</h1>
+    <h1>My Blog</h1>
     <ul>
       {
-        props.shows.map(({ show: { id, name } }, i) => (
-          <PostLink id={ id } name={ name } key={ i }/>
+        posts.map(({ id, title }, i) => (
+          <PostLink id={ id } title={ title } key={ i }/>
         ))
       }
     </ul>
+    <style jsx>{ `
+      h1 {
+        font-family: "Arial";
+      }
+
+      ul {
+        padding: 0;
+      }
+    ` }</style>
   </Layout>
 );
-
-Index.getInitialProps = async function () {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
-  const shows = await res.json();
-  console.log('Show data fetched: ', shows.length);
-  return { shows };
-};
 
 export default Index;
