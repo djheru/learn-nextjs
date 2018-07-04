@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -142,58 +142,79 @@ module.exports = require("styled-jsx/style");
 /***/ }),
 /* 4 */,
 /* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(9);
+module.exports = __webpack_require__(7);
 
 
 /***/ }),
-/* 9 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_MyLayout_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_router__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_markdown__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_markdown___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_markdown__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_MyLayout__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
 
 
 
 
+var arial = 'Arial';
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_2_next_router__["withRouter"])(function (props) {
-  return __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_MyLayout_js__["a" /* default */], null, __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement("h1", {
-    className: "jsx-3267370368"
-  }, props.router.query.title), __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement("div", {
-    className: "jsx-3267370368" + " " + "markdown"
-  }, __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_markdown___default.a, {
-    source: "\nThis is our blog post.\nYes. We can have a [link](/link).\nAnd we can have a title as well.\n\n### This is a title\n\nAnd here's the content.\n     "
-  })), __WEBPACK_IMPORTED_MODULE_4_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
-    styleId: "3267370368",
-    css: [".markdown{font-family:'Arial';}", ".markdown a{-webkit-text-decoration:none;text-decoration:none;color:blue;}", ".markdown a:hover{opacity:0.6;}", ".markdown h3{margin:0;padding:0;text-transform:uppercase;}"]
+var PostLink = function PostLink(_ref) {
+  var id = _ref.id,
+      title = _ref.title;
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("li", {
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2237822260", [arial]]])
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_next_link___default.a, {
+    as: "/p/".concat(id),
+    href: "/post?title=".concat(title)
+  }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
+    className: __WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a.dynamic([["2237822260", [arial]]])
+  }, title)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+    styleId: "2237822260",
+    css: ["li.__jsx-style-dynamic-selector{list-style:none;margin:5px 0;font-family:".concat(arial, ";}"), "a.__jsx-style-dynamic-selector{-webkit-text-decoration:none;text-decoration:none;color:blue;}", "a.__jsx-style-dynamic-selector:hover{opacity:0.6;}"],
+    dynamic: [arial]
   }));
-}));
+};
 
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
+var posts = [{
+  title: 'Hello Next.js',
+  id: 'hello-nextjs'
+}, {
+  title: 'Learn Next.js is awesome',
+  id: 'learn-nextjs'
+}, {
+  title: 'Deploy apps with Zeit',
+  id: 'deploy-nextjs'
+}];
 
-module.exports = require("next/router");
+var Index = function Index() {
+  return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_MyLayout__["a" /* default */], null, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h1", {
+    className: "jsx-1664195823"
+  }, "My Blog"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("ul", {
+    className: "jsx-1664195823"
+  }, posts.map(function (_ref2, i) {
+    var id = _ref2.id,
+        title = _ref2.title;
+    return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(PostLink, {
+      id: id,
+      title: title,
+      key: i
+    });
+  })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_styled_jsx_style___default.a, {
+    styleId: "1664195823",
+    css: ["h1.jsx-1664195823{font-family:\"Arial\";}", "ul.jsx-1664195823{padding:0;}"]
+  }));
+};
 
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-markdown");
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ })
 /******/ ]);
