@@ -7,7 +7,10 @@
     "dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "export": "next export",
+    "serve-static": "npm run export && serve -p 8080 ./out",
+    "deploy": "npm run export && now ./out"
   },
   "keywords": [],
   "author": "Philip Damra <philip.damra@gstv.com> (http://www.gstv.com)",
